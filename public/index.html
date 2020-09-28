@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+
+
+    <style>
+        .spacing {
+            margin: 10px
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero is-dark is-fullheight" id="login">
+        <div class="hero-body">
+          <div class="container">
+            
+ 
+            <div class="columns">
+                <div class="column is-4 is-offset-4">
+                    <div class="card">
+                        <div class="card-content" style="display: block;">
+                            <img src="images/bulma-logo.png" alt="" style="width: 60%; margin:20px auto; display: block;">
+ 
+                            <input id="lemail" class="input" type="email" placeholder="email" style="margin-bottom: 20px;">
+                            <input id="lpassword" class="input" type="password" placeholder="password" style="margin-bottom: 20px;">
+                            <button onclick="login()" class="button is-info is-medium is-fullwidth">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+           
+ 
+          </div>
+        </div>
+      </section>
+
+
+      <section class="hero is-dark is-fullheight" id="register">
+        <div class="hero-body">
+          <div class="container">
+            
+ 
+            <div class="columns">
+                <div class="column is-4 is-offset-4">
+                    <div class="card">
+                        <div class="card-content" style="display: block;">
+                            <img src="images/bulma-logo.png" alt="" style="width: 60%; margin:20px auto; display: block;">
+<!--  
+                            <input class="input" type="text" placeholder="fullname" style="margin-bottom: 20px;">
+                            <input class="input" type="number" placeholder="mobile" style="margin-bottom: 20px;"> -->
+                            <input id="semail" class="input" type="email" placeholder="email" style="margin-bottom: 20px;">
+                            <input id="spassword" class="input" type="password" placeholder="password" style="margin-bottom: 20px;">
+                            <input class="input" type="password" placeholder="retype password" style="margin-bottom: 20px;">
+                            <button onclick="signup()" class="button is-info is-medium is-fullwidth">REGISTER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+           
+ 
+          </div>
+        </div>
+      </section>
+
+
+      <section class="container" id="dashboard">
+        
+        <div class="hero">
+            <div class="hero-body">
+                <p class="is-size-5">Welcome to Fake Swiggy</p>
+            </div>
+        </div>
+
+        <nav class="level">
+            <p class="level-item has-text-centered">
+              <button onclick="showCreateShop()" class="button is-info">Create Shop</button>
+            </p>
+            <p class="level-item has-text-centered">
+              <img src="https://bulma.io/images/bulma-type.png" alt="" style="height: 30px;">
+            </p>
+            <p class="level-item has-text-centered">
+              <button onclick="logout()" class="button is-danger">Logout</button>
+            </p>
+          </nav>
+
+          <div class="container" id="rlist" style="width:100%;">
+          </div>
+
+          <div class="modal" id="createShopForm">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="card">
+                  <div class="card-content">
+                      
+                    <p class="is-size-6">
+                        Create Shop
+                    </p>
+
+                    <input class="input spacing" type="text" id="rname" placeholder="Name of shop"/>
+                    <input class="input spacing" type="text" id="rcity" placeholder="city"/>
+                    <input class="input spacing" type="text" id="rpincode" placeholder="pincode"/>
+                    <input class="input spacing" type="text" id="rrating" placeholder="rating"/>
+                    <progress class="spacing"  id="uploader" value="0" max="100">0%</progress>
+                    <input class="spacing" type="file" id="fileButton"/>
+
+                    <button class="button is-info" onclick="uploadFile()">Upload</button>
+                    <button onclick="createResturant()" class="spacing button is-fullwidth is-success">Create Shop</button>
+                  </div>
+              </div>
+            </div>
+            <button onclick="hideCreateShop()" class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+      </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
