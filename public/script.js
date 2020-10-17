@@ -1,14 +1,5 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyCZHdF0pk03brWPQii9dgSs_ehWv4GswSE",
-    authDomain: "restaurant-worshop-pp.firebaseapp.com",
-    databaseURL: "https://restaurant-worshop-pp.firebaseio.com",
-    projectId: "restaurant-worshop-pp",
-    storageBucket: "restaurant-worshop-pp.appspot.com",
-    messagingSenderId: "678123931891",
-    appId: "1:678123931891:web:51cb668bc9e9f0c8e0cf86",
-    measurementId: "G-JL9PLDK9HK"
-  };
+
   firebase.initializeApp(firebaseConfig);
 
   var db = firebase.firestore();
